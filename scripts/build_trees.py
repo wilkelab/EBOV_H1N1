@@ -3,7 +3,7 @@
 import subprocess
 import os
 
-head_dirs = ['EBOV_2014/', 'H1N1/', 'all_ebolavirus/']
+head_dirs = ['EBOV_all_outbreaks/','EBOV_2014/', 'H1N1/', 'all_ebolavirus/']
 for dir in head_dirs:
     alnfiles = os.listdir('../alignments/' + dir)
     for file in alnfiles:
