@@ -1,3 +1,9 @@
 SJS. 
 All trees here were made with the command "FastTree -nt -gtr -nosupport <aln> > <tree> ", using the script ../scripts/build_trees.py
 Files are named according to corresponding alignment, but with .tree extension.
+
+The summary file "tree_stats.txt" was created w/ script ../scripts/calc_tree_stats.py . By default, stats were calculated for all trees in phylogenies/.
+Statisitcs include - 
+1. Tree length (sum of all branch lengths)
+2. Mean root-to-tip. ONLY consider for trees which do *not* have the outgroup included. With outgroup = artificially inflated.
+3. Mean patristic distance. Similarly, ONLY consider for trees which do *not* have the outgroup included. With outgroup = artificially inflated.
