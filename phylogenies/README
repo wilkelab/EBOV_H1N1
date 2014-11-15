@@ -1,0 +1,3 @@
+SJS. 
+All trees here were made with the command "FastTree -nt -gtr -nosupport <aln> > <tree> ", using the script ../scripts/build_trees.py
+Files are named according to corresponding alignment, but with .tree extension.
