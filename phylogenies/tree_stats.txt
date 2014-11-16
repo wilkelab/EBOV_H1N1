@@ -16,10 +16,10 @@ EBOV_2014	np2014	0.01194	0.001	0.00119
 EBOV_2014	np2014_unique	0.01194	0.00242	0.00285
 EBOV_2014	np2014_w_outgroup	0.04085	0.00133	0.00186
 EBOV_2014	np2014_w_outgroup_unique	0.04085	0.00445	0.00658
-H1N1	HA09_April_noDup	0.12563	0.0077	0.00909
-H1N1	HA09_April_noDup_unique	0.12563	0.00681	0.00927
-H1N1	HA09_April_noDup_unique_w_outgroup	0.44736	0.01216	0.01503
-H1N1	HA09_April_noDup_w_outgroup	0.44736	0.01023	0.01253
+H1N1	HA09_April_noDupStrains	0.11456	0.00708	0.00975
+H1N1	HA09_April_noDupStrains_outgroup	0.43736	0.00857	0.01109
+H1N1	NP09_April_noDupStrains	0.06756	0.00527	0.00591
+H1N1	NP09_April_noDupStrains_outgroup	0.25489	0.00834	0.00835
 all_ebolavirus	full_nuc	1.58625	0.12417	0.21042
 all_ebolavirus	full_nuc_unique	1.58524	0.20575	0.31554
 all_ebolavirus	gp_nuc	1.86207	0.16523	0.2541
