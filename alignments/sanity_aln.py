@@ -11,7 +11,10 @@ nuc = ['A', 'C', 'G', 'T']
 for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
     print "\n\n========== " + gene + " =========="
     aln = AlignIO.read("EBOV_2014/" + gene + "2014_unique.aln", "fasta")
+    ids = []
     numseq = len(aln)
+    print numseq
+    continue
     alnlen = len(aln[0])
     aamat = np.empty( [numseq, alnlen/3], dtype = 'int8' )
     nucmat = np.empty( [numseq, alnlen], dtype = 'int8')
@@ -30,8 +33,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
                 nucmat[i][j] = nuc.index(seq[j])
             except:
                 nucmat[i][j] = 4
-            
-            
+        ids.append( str(entry.id) )      
         i += 1
     
     
@@ -45,6 +47,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
 
 
     print "amino informative:"
+    x = 0
     for col in np.array(informative).T:
         colstr = ''
         for row in col:
@@ -52,7 +55,8 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
                 colstr += amino_acids[row]
             except:
                 colstr += 'X'
-        print colstr
+        print ids[x], colstr
+        x += 1
 
   
     informative = []
@@ -64,6 +68,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
             informative.append(col)  
 
     print "\n\nnuc informative:"
+    x=0
     for col in np.array(informative).T:
         colstr = ''
         for row in col:
@@ -71,7 +76,8 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
                 colstr += nuc[row]
             except:
                 colstr += 'N'
-        print colstr
+        print ids[x], colstr
+        x += 1
         
         
         
