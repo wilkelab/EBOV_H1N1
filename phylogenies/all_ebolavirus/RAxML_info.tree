@@ -1,0 +1,44 @@
+
+
+WARNING: RAxML is not checking sequences for duplicate seqs and sites with missing data!
+
+
+
+This is RAxML version 8.1.1 released by Alexandros Stamatakis on July 31 2014.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+
+RAxML Bipartition Computation: Drawing support values from trees in file ebola_boot/RAxML_bootstrap.ebola_boot onto tree in file ebola_tree/RAxML_bestTree.ebola_tree
+
+
+RAxML was called as follows:
+
+raxmlHPC-SSE3 -m PROTCATLGF -f b -t ebola_tree/RAxML_bestTree.ebola_tree -z ebola_boot/RAxML_bootstrap.ebola_boot -n tree 
+
+
+
+
+Found 1 tree in File ebola_tree/RAxML_bestTree.ebola_tree
+
+
+
+Found 100 trees in File ebola_boot/RAxML_bootstrap.ebola_boot
+
+
+
+Found 1 tree in File ebola_tree/RAxML_bestTree.ebola_tree
+
+
+
+Time for Computation of Bipartitions 0.066073
+Tree with bipartitions written to file:  /Users/sjspielman/Dropbox/ebov_analysis/ebolavirus_phylogeny/RAxML_bipartitions.tree
+Tree with bipartitions as branch labels written to file:  /Users/sjspielman/Dropbox/ebov_analysis/ebolavirus_phylogeny/RAxML_bipartitionsBranchLabels.tree
+Execution information file written to :  /Users/sjspielman/Dropbox/ebov_analysis/ebolavirus_phylogeny/RAxML_info.tree
