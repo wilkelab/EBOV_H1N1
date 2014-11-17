@@ -1,0 +1,139 @@
+SJS. This top summary added manually.
+1. np has 4 aa, 11 nuc informative columns    = 7/11 synonymous
+2. l has 5 aa, 16 nuc informative columns     = 11/16 synonymous
+3. gp has 3 aa, 3 nuc informative columns     = 3/3 NONsynonymous *** <- this is the host-binding one!! 
+4. vp24 has 1 aa, 3 nuc informative columns   = 2/3 synonymous
+5. vp30 has 0 aa, 2 nuc informative columns   = 2/2 synonymous
+6. vp40 has 1 aa, 4 nuc informative columns   = 3/4 synonymous
+
+From here below was generated with sanity_aln.py. Shows informative columns (columns which contain more than 1 aa nucleotide) for unique sequences of each gene, restricted to 2014 outbreak.
+========== np ==========
+amino informative:
+IREQ
+ICEQ
+ICEQ
+ICEQ
+IREQ
+IREQ
+VCEQ
+ICER
+ICEQ
+ICEQ
+IREQ
+IRGQ
+
+
+nuc informative:
+ACAAACAGAAA
+ATAAACAGGAA
+ATAAACAGAAA
+ATAAGCAGAAA
+ACAAACAGAAG
+ACAAACAGNAA
+GTAAACAGAAA
+ATAAACAGAGA
+ATATACAGAAA
+ATCAACAGAAA
+ACAAATAGAAA
+ACAAATGAAAA
+
+
+========== l ==========
+amino informative:
+RGQLC
+RGQLC
+KGQLC
+RGRLC
+RGQLC
+RGQLC
+RGQIC
+RGQLC
+RGQLC
+RGQLR
+RGQLC
+RGQLC
+XDQLC
+
+
+nuc informative:
+CGGAGTTCACGTTTTT
+CGGAGTTCACATTTCT
+CGAAGTTCACATTTCT
+TGGAGTTCGCGTTTTT
+CGGAGTTTACATTTCT
+CGGAGTCCACATTTCT
+CAGAGTTCACAATTCT
+CGGAGCTCACATTTCT
+CGGAGTTCACATCTCT
+CGGAGTTCACATTCCT
+CGGAGTCCACATTTCC
+CGGCGTTCACATTTCT
+CGGNATTCATGTTTTT
+
+
+========== gp ==========
+amino informative:
+SVW
+SAW
+SAR
+NVW
+
+
+nuc informative:
+GTT
+GCT
+GCA
+ATT
+
+
+========== vp24_ ==========
+amino informative:
+I
+I
+V
+I
+
+
+nuc informative:
+CTA
+TTA
+CTG
+CCA
+
+
+========== vp30_ ==========
+amino informative:
+
+
+nuc informative:
+C
+A
+A
+
+
+========== vp35_ ==========
+amino informative:
+V
+G
+V
+
+
+nuc informative:
+TA
+GA
+TG
+
+
+========== vp40_ ==========
+amino informative:
+I
+I
+I
+T
+
+
+nuc informative:
+TTTC
+TTTA
+CTTC
+TCCC
