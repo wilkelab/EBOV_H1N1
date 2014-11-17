@@ -1,0 +1,5 @@
+This directory contains all alignments used.
+
+The file "align_stats.txt" contains nucleotide-diversity statistics for several alignments. It was calculated by executing:
+    ../scripts/run_calc_pi.sh
+in the present directory.
