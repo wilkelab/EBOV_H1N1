@@ -8,32 +8,34 @@ amino_acids = ["A", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "P", 
 codon_dict   = {"AAA":"K", "AAC":"N", "AAG":"K", "AAT":"N", "ACA":"T", "ACC":"T", "ACG":"T", "ACT":"T", "AGA":"R", "AGC":"S", "AGG":"R", "AGT":"S", "ATA":"I", "ATC":"I", "ATG":"M", "ATT":"I", "CAA":"Q", "CAC":"H", "CAG":"Q", "CAT":"H", "CCA":"P", "CCC":"P", "CCG":"P", "CCT":"P", "CGA":"R", "CGC":"R", "CGG":"R", "CGT":"R", "CTA":"L", "CTC":"L", "CTG":"L", "CTT":"L", "GAA":"E", "GAC":"D", "GAG":"E", "GAT":"D", "GCA":"A", "GCC":"A", "GCG":"A", "GCT":"A", "GGA":"G", "GGC":"G", "GGG":"G", "GGT":"G", "GTA":"V", "GTC":"V", "GTG":"V", "GTT":"V", "TAC":"Y", "TAT":"Y", "TCA":"S", "TCC":"S", "TCG":"S", "TCT":"S", "TGC":"C", "TGG":"W", "TGT":"C", "TTA":"L", "TTC":"F", "TTG":"L", "TTT":"F", "NNN":"X"}
 nuc = ['A', 'C', 'G', 'T']
 
-for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
+for gene in ['gp', 'l', 'np', 'vp24', 'vp30', 'vp35', 'vp40']:
+    
     print "\n\n========== " + gene + " =========="
-    aln = AlignIO.read("EBOV_2014/" + gene + "2014_unique.aln", "fasta")
-    ids = []
-    numseq = len(aln)
-    print numseq
-    continue
-    alnlen = len(aln[0])
-    aamat = np.empty( [numseq, alnlen/3], dtype = 'int8' )
-    nucmat = np.empty( [numseq, alnlen], dtype = 'int8')
-    i=0
+    aln = AlignIO.read("../alignments/EBOV_2014/" + gene + "_nuc.aln", "fasta")
+    unique_seqs = []
     for entry in aln:
-        id = str(entry.id)
-        seq = str(entry.seq)
+        if str(entry.seq) not in unique_seqs:
+            unique_seqs.append(str(entry.seq))
+    numseq = len(unique_seqs)
+    alnlen = len(unique_seqs[0])
+    aamat = np.ones( [numseq, alnlen/3], dtype = 'int8' )
+    aamat[aamat == 1] = -1
+    nucmat = np.ones( [numseq, alnlen], dtype = 'int8')
+    nucmat[nucmat == 1] = -1
+    i=0
+    for seq in unique_seqs:
         for j in range(0,alnlen,3):
             try:
                 amino = codon_dict[ seq[j:j+3] ]
                 aamat[i][j/3] = amino_acids.index(amino)
             except:
                 aamat[i][j/3] = 100
+              
         for j in range(alnlen):
             try:
                 nucmat[i][j] = nuc.index(seq[j])
             except:
-                nucmat[i][j] = 4
-        ids.append( str(entry.id) )      
+                nucmat[i][j] = 4  
         i += 1
     
     
@@ -45,9 +47,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
         else:
             informative.append(col)
 
-
     print "amino informative:"
-    x = 0
     for col in np.array(informative).T:
         colstr = ''
         for row in col:
@@ -55,8 +55,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
                 colstr += amino_acids[row]
             except:
                 colstr += 'X'
-        print ids[x], colstr
-        x += 1
+        print colstr
 
   
     informative = []
@@ -68,7 +67,6 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
             informative.append(col)  
 
     print "\n\nnuc informative:"
-    x=0
     for col in np.array(informative).T:
         colstr = ''
         for row in col:
@@ -76,8 +74,7 @@ for gene in ['np', 'l', 'gp', 'vp24_', 'vp30_', 'vp35_', 'vp40_']:
                 colstr += nuc[row]
             except:
                 colstr += 'N'
-        print ids[x], colstr
-        x += 1
+        print colstr
         
         
         
