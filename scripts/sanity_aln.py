@@ -1,4 +1,5 @@
 # SJS. quick script to check out aa/nuc alignment variation in 2014 outbreaks.
+# Used to create alignments/amino_nuc_informative_cols.txt 
 from Bio import AlignIO
 import numpy as np
 import sys
